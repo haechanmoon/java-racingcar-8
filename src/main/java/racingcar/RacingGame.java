@@ -20,7 +20,7 @@ public class RacingGame {
             cars.add(new Car(name));
         }
 
-        System.out.print("\n" + Messages.VIEW_RESULT);
+        System.out.println("\n" + Messages.EXECUTION_RESULT);
 
         for (int i = 0; i < turns; i++) {
             for (Car car : cars) {
@@ -29,8 +29,27 @@ public class RacingGame {
 
             outputView.printTurnResult(cars);
         }
+        outputView.printWinners(selectWinners(cars));
 
-        //find highScore;
+    }
+
+    private List<String> selectWinners(List<Car> cars) {
+
+        int maxPosition = 0;
+        for (Car car : cars) {
+            if (car.getPosition() > maxPosition) {
+                maxPosition = car.getPosition();
+            }
+        }
+
+        List<String> winnerNames = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getPosition() == maxPosition) {
+                winnerNames.add(car.getName());
+            }
+        }
+
+        return winnerNames;
     }
 
 }

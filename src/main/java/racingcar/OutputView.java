@@ -22,4 +22,9 @@ public class OutputView {
     private String convertPositionToHyphens(int position) {
         return "-".repeat(Math.max(0, position));
     }
+
+    public void printWinners(List<String> winnerNames) {
+        String winners = String.join(", ", winnerNames);
+        System.out.print(Messages.TOTAL_RESULT + " : " + winners);
+    }
 }
