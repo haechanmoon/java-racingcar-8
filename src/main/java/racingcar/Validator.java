@@ -15,6 +15,9 @@ public class Validator {
             if (name.isEmpty()) {
                 throw new IllegalArgumentException("자동차 이름이 공백일 수 없습니다.");
             }
+            if (!onlyOneName.add(name)) {
+                throw new IllegalArgumentException("이름은 중복될 수 없습니다.");
+            }
         }
     }
 }
