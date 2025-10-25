@@ -10,13 +10,13 @@ public class Validator {
         Set<String> onlyOneName = new HashSet<>();
         for (String name : names) {
             if (name.length() > 5) {
-                throw new IllegalArgumentException("자동차 이름은 5자 이하만 가능합니다. 구분자를 확인하세요");
+                throw new IllegalArgumentException(Messages.ERROR_NAME_LENGTH);
             }
             if (name.isEmpty()) {
-                throw new IllegalArgumentException("자동차 이름이 공백일 수 없습니다.");
+                throw new IllegalArgumentException(Messages.ERROR_NAME_EMPTY);
             }
             if (!onlyOneName.add(name)) {
-                throw new IllegalArgumentException("이름은 중복될 수 없습니다.");
+                throw new IllegalArgumentException(Messages.ERROR_NAME_DUPLICATE);
             }
         }
     }
@@ -26,13 +26,11 @@ public class Validator {
         try {
             turns = Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("시도 횟수는 숫자만 입력 가능합니다.");
+            throw new IllegalArgumentException(Messages.ERROR_TURNS_NOT_A_NUMBER);
         }
-
         if (turns <= 0) {
-            throw new IllegalArgumentException("시도 횟수는 1이상의 양의 정수만 가능합니다.");
+            throw new IllegalArgumentException(Messages.ERROR_TURNS_POSITIVE_INTEGER);
         }
-
         return turns;
     }
 }
