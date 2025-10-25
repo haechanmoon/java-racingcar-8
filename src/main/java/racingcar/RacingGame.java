@@ -15,12 +15,22 @@ public class RacingGame {
     public void start() {
         List<String> carNames = inputView.getCarNames();
         int turns = inputView.getTurns();
-
-        // 3. (다음 단계) 받아온 이름들로 'Car' 객체들을 만든다.
         List<Car> cars = new ArrayList<>();
-
         for (String name : carNames) {
             cars.add(new Car(name));
         }
+
+        System.out.print("\n" + Messages.VIEW_RESULT);
+
+        for (int i = 0; i < turns; i++) {
+            for (Car car : cars) {
+                car.move();
+            }
+
+            outputView.printTurnResult(cars);
+        }
+
+        //find highScore;
     }
+
 }
