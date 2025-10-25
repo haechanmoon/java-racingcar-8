@@ -8,4 +8,10 @@ public class InputView {
         String[] carNames = Console.readLine().split(",");
         return carNames;
     }
+
+    public int getTurns() {
+        System.out.println(Messages.ASK_TURNS);
+        int turns = Integer.parseInt(Console.readLine());
+        return turns;
+    }
 }
