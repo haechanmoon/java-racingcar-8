@@ -1,12 +1,13 @@
 package racingcar;
 
 import camp.nextstep.edu.missionutils.Console;
+import java.util.List;
 
 public class InputView {
-    public String[] getCarNames() {
+    public List<String> getCarNames() {
         System.out.println(Messages.ASK_CAR_NAMES);
         String[] carNames = Console.readLine().split(",");
-        return carNames;
+        return List.of(carNames);
     }
 
     public int getTurns() {
