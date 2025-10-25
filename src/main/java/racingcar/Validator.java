@@ -20,4 +20,19 @@ public class Validator {
             }
         }
     }
+
+    public static int validateTurns(String input) {
+        int turns;
+        try {
+            turns = Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("시도 횟수는 숫자만 입력 가능합니다.");
+        }
+
+        if (turns <= 0) {
+            throw new IllegalArgumentException("시도 횟수는 1이상의 양의 정수만 가능합니다.");
+        }
+
+        return turns;
+    }
 }
