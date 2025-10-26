@@ -9,6 +9,7 @@ public class Validator {
     public static void validateCarNames(List<String> names) {
         Set<String> onlyOneName = new HashSet<>();
         for (String name : names) {
+            name = name.trim();
             if (name.length() > 5) {
                 throw new IllegalArgumentException(Messages.ERROR_NAME_LENGTH);
             }
