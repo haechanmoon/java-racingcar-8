@@ -22,8 +22,8 @@ class ValidatorTest {
     }
 
     @Test
-    void 이름이_공백_빈문자열_예외_발생() {
-        List<String> names = List.of("", "");
+    void 이름이_공백_빈문자열이면_예외_발생() {
+        List<String> names = List.of("pobi", "", "woni");
         assertThatThrownBy(() -> Validator.validateCarNames(names))
                 .isInstanceOf(IllegalArgumentException.class);
     }
