@@ -9,10 +9,14 @@ class ValidatorTest {
 
     @Test
     void 이름이_5자를_넘으면_예외_발생() {
-        // given
-        List<String> names = List.of("pobi", "javajigi"); // 7자
+        List<String> names = List.of("pobi", "javajigi");
+        assertThatThrownBy(() -> Validator.validateCarNames(names))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 
-        // when & then
+    @Test
+    void 이름이_중복되면_예외_발생() {
+        List<String> names = List.of("pobi", "pobi");
         assertThatThrownBy(() -> Validator.validateCarNames(names))
                 .isInstanceOf(IllegalArgumentException.class);
     }
