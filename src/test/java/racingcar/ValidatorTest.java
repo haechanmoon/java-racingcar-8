@@ -41,4 +41,11 @@ class ValidatorTest {
         assertThatThrownBy(() -> Validator.validateTurns(input))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    void 시도_횟수가_0일때_예외_발생() {
+        String input = "0";
+        assertThatThrownBy(() -> Validator.validateTurns(input))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
