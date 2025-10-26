@@ -21,4 +21,10 @@ class ValidatorTest {
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
+    @Test
+    void 이름이_공백_빈문자열_예외_발생() {
+        List<String> names = List.of("", "");
+        assertThatThrownBy(() -> Validator.validateCarNames(names))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
