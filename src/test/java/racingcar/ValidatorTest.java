@@ -36,7 +36,7 @@ class ValidatorTest {
     }
 
     @Test
-    void 시도_횟수가_0이하_정수일때_예외_발생() {
+    void 시도_횟수가_음수일때_예외_발생() {
         String input = "-3";
         assertThatThrownBy(() -> Validator.validateTurns(input))
                 .isInstanceOf(IllegalArgumentException.class);
