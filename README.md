@@ -24,15 +24,16 @@
 
 ### 테스트 작성
 
-- [ ] **Validator (유효성 검사) 테스트**
+- [x] **Validator (유효성 검사) 테스트**
     - [x] 자동차 이름이 5자를 초과할 때 `IllegalArgumentException` 발생하는지 테스트
-    - [ ] 자동차 이름이 중복될 때 `IllegalArgumentException` 발생하는지 테스트
-    - [ ] 자동차 이름이 공백/빈 문자열일 때 `IllegalArgumentException` 발생하는지 테스트
-    - [ ] 시도 횟수가 숫자가 아닐 때 `IllegalArgumentException` 발생하는지 테스트
-    - [ ] 시도 횟수가 0 이하의 정수일 때 `IllegalArgumentException` 발생하는지 테스트
-- [ ] **Car (자동차) 기능 테스트**
-    - [ ] 랜덤 숫자가 4 이상일 때, 자동차의 `position`이 1 증가하는지 테스트
-    - [ ] 랜덤 숫자가 3 이하일 때, 자동차의 `position`이 0을 유지하는지 테스트
+    - [x] 자동차 이름이 중복될 때 `IllegalArgumentException` 발생하는지 테스트
+    - [x] 자동차 이름이 공백/빈 문자열일 때 `IllegalArgumentException` 발생하는지 테스트
+    - [x] 시도 횟수가 숫자가 아닐 때 `IllegalArgumentException` 발생하는지 테스트
+    - [x] 시도 횟수가 음수일 때 `IllegalArgumentException` 발생하는지 테스트
+    - [x] 시도 횟수가 0일 때 `IllegalArgumentException` 발생하는지 테스트
+- [x] **Car (자동차) 기능 테스트**
+    - [x] 랜덤 숫자가 4 이상일 때, 자동차의 `position`이 1 증가하는지 테스트
+    - [x] 랜덤 숫자가 3 이하일 때, 자동차의 `position`이 0을 유지하는지 테스트
 - [ ] **RacingGame (게임 로직) 테스트**
     - [ ] 단독 우승자를 올바르게 선별하는지 테스트
     - [ ] 공동 우승자를 올바르게 선별하는지 테스트
