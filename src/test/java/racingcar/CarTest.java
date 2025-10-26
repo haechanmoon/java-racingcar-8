@@ -16,13 +16,22 @@ class CarTest extends NsTest {
     void 전진_테스트() {
         Car car = new Car("pobi");
         assertRandomNumberInRangeTest(
-                () -> car.move(), MOVING_FORWARD
+                car::move, MOVING_FORWARD
         );
         assertThat(car.getPosition()).isEqualTo(1);
     }
 
+    @Test
+    @DisplayName("정지 테스트")
+    void 정지_테스트() {
+        Car car = new Car("pobi");
+        assertRandomNumberInRangeTest(
+                car::move, STOP
+        );
+        assertThat(car.getPosition()).isEqualTo(0);
+    }
+
     @Override
     public void runMain() {
-
     }
 }
