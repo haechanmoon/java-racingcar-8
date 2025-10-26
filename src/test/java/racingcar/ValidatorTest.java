@@ -27,4 +27,12 @@ class ValidatorTest {
         assertThatThrownBy(() -> Validator.validateCarNames(names))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+
+    @Test
+    void 시도_횟수가_숫자가_아닐때_예외_발생() {
+        String input = "r";
+        assertThatThrownBy(() -> Validator.validateTurns(input))
+                .isInstanceOf(IllegalArgumentException.class);
+
+    }
 }
