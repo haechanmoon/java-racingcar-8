@@ -24,8 +24,10 @@ public class OutputView {
 
 
     public static void totalResult() {
-        for (int i = 0; i < InputView.readTurnCounts(); i++) {
-
+        List<String> champion = RacingCarGame.selectChampion();
+        System.out.print(Messages.FINAL_CHAMPION);
+        for (String val : champion) {
+            System.out.print(val + ", ");
         }
     }
 

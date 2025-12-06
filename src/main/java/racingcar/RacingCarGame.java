@@ -19,7 +19,7 @@ public class RacingCarGame {
         InputView.readTurnCounts();
         generateCars();
         totalMove();
-
+        OutputView.totalResult();
     }
 
     public static String[] splitCarNames(String input) {
@@ -50,8 +50,16 @@ public class RacingCarGame {
         }
     }
 
-    public void selectChampion() {
-
+    public static List<String> selectChampion() {
+        List<String> champion = new ArrayList<>();
+        int position = 0;
+        for (RacingCar car : cars) {
+            if (position < car.getPosition()) {
+                position = car.getPosition();
+                champion.add(car.getName());
+            }
+        }
+        return champion;
     }
 
 }
