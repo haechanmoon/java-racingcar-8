@@ -22,8 +22,12 @@ public class RacingCarGame {
         OutputView.totalResult();
     }
 
-    public static String[] splitCarNames(String input) {
-        return input.split("[,]");
+    public static List<String> splitCarNames(String input) {
+        Validator.validateEmpty(input);
+        String[] names = input.split(delimiter);
+        Validator.validateNames(names);
+        return new ArrayList<>(Arrays.asList(names));
+
     }
 
     public void generateCars() {
