@@ -18,7 +18,7 @@ public class OutputView {
 
     public static void printCurrentStatus(List<RacingCar> cars) {
         for (RacingCar car : cars) {
-            System.out.println(car.getName() + ": " + car.invertPosition());
+            System.out.println(car.getName() + " : " + car.getPositionDash());
         }
     }
 
