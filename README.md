@@ -22,7 +22,7 @@
 
 ## 테스트 리스트
 
-- [ ] 자동차 이름에 공백일 때 `IllegalArgumentException` 반환 후 종료
+- [ ] 자동차 이름이 공백일 때 `IllegalArgumentException` 반환 후 종료
 - [ ] 자동차 이름 자체가 공백일 때 `IllegalArgumentException` 반환 후 종료
 - [ ] 자동차 이름이 6자 이상일 때 `IllegalArgumentException` 반환 후 종료
 - [ ] 자동차 이름 구분자가 ,로 구분되는지 검사
