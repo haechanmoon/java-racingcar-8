@@ -1,6 +1,7 @@
 package racingcar;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import camp.nextstep.edu.missionutils.Console;
 import java.io.ByteArrayInputStream;
@@ -29,5 +30,17 @@ class InputViewTest {
         assertThat(counts).isEqualTo(5);
     }
 
-    
+    @Test
+    @DisplayName("입력값 예외처리")
+    void 시도_횟수_입력_예외() {
+        //given
+        String input = "세번";
+        System.setIn(new ByteArrayInputStream(input.getBytes()));
+
+        //when&then
+        assertThatThrownBy(InputView::readTurnCounts)
+                .isInstanceOf(IllegalArgumentException.class);
+
+    }
+
 }
