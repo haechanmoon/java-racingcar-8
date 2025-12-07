@@ -9,6 +9,9 @@ public class InputView {
     }
 
     public static int readTurnCounts() {
-        return Integer.parseInt(Console.readLine());
+        String input = Console.readLine();
+        Validator.validateEmpty(input);
+        Validator.validateNumber(input);
+        return Integer.parseInt(input);
     }
 }
