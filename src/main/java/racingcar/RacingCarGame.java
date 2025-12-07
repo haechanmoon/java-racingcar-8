@@ -50,16 +50,25 @@ public class RacingCarGame {
         }
     }
 
-    public static List<String> selectChampion() {
+    public static List<String> selectChampion(List<RacingCar> cars) {
+        int maxPosition = getMaxPosition(cars);
         List<String> champion = new ArrayList<>();
-        int position = 0;
+
         for (RacingCar car : cars) {
-            if (position < car.getPosition()) {
-                position = car.getPosition();
+            if (maxPosition == car.getPosition()) {
                 champion.add(car.getName());
             }
         }
         return champion;
     }
 
+    private static int getMaxPosition(List<RacingCar> cars) {
+        int maxPosition = 0;
+        for (RacingCar car : cars) {
+            if (maxPosition < car.getPosition()) {
+                maxPosition = car.getPosition();
+            }
+        }
+        return maxPosition;
+    }
 }
