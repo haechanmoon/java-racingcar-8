@@ -28,4 +28,5 @@
 - [x] 시도할 횟수가 음수일 때 `IllegalArgumentException` 반환 후 종료
 - [ ] 시도할 횟수가 자연수가 아닐 때 `IllegalArgumentException` 반환 후 종료
 - [x] 자동차 전진 확인
-- [x] 위치만큼 `-` 출력하는지 확인
+- [x] 위치만큼 `-` 출력 확인
+- [x] 최종 우승자 출력 확인

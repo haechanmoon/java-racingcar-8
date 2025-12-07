@@ -31,6 +31,28 @@ class OutputViewTest extends NsTest {
         );
     }
 
+    @Test
+    @DisplayName("최종 우승자 출력 성공")
+    void 최종_우승자_출력() {
+        //given
+        RacingCar pobi = new RacingCar("pobi");
+        pobi.go(FOWARD);
+        pobi.go(FOWARD);
+
+        RacingCar woni = new RacingCar("woni");
+        woni.go(FOWARD);
+        woni.go(FOWARD);
+
+        List<RacingCar> cars = List.of(pobi, woni);
+
+        //when
+        OutputView.totalResult(cars);
+
+        //then
+        assertThat(output()).contains("pobi, woni");
+    }
+
+
     @Override
     protected void runMain() {
 
