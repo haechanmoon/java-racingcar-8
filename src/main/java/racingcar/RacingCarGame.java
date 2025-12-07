@@ -1,25 +1,27 @@
 package racingcar;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class RacingCarGame {
 
-    public static List<RacingCar> cars;
-    public RacingCar racingCar;
+    private static final String delimiter = "[,]";
+    public List<RacingCar> cars;
 
     public RacingCarGame() {
-        cars = new ArrayList<>();
+        this.cars = new ArrayList<>();
     }
 
     public void start() {
         OutputView.askCarNames();
-        InputView.readInput();
+        String input = InputView.readInput();
         OutputView.askTurnCounts();
-        InputView.readTurnCounts();
-        generateCars();
-        totalMove();
-        OutputView.totalResult();
+        int turns = InputView.readTurnCounts();
+        generateCars(input);
+        OutputView.runResult();
+        totalMove(turns);
+        OutputView.totalResult(cars);
     }
 
     public static List<String> splitCarNames(String input) {
@@ -30,9 +32,8 @@ public class RacingCarGame {
 
     }
 
-    public void generateCars() {
-        String input = InputView.readInput();
-        String[] carNames = splitCarNames(input);
+    public void generateCars(String input) {
+        List<String> carNames = splitCarNames(input);
         for (String val : carNames) {
             RacingCar racingCar = new RacingCar(val);
             cars.add(racingCar);
@@ -46,11 +47,10 @@ public class RacingCarGame {
         OutputView.printCurrentStatus(cars);
     }
 
-    public void totalMove() {
-        int counts = InputView.readTurnCounts();
+    public void totalMove(int counts) {
         for (int i = 0; i < counts; i++) {
             moveAll();
-            System.out.println("\n");
+            System.out.print("\n");
         }
     }
 
