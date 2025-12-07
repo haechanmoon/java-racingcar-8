@@ -3,6 +3,11 @@ package racingcar;
 import camp.nextstep.edu.missionutils.Randoms;
 
 public class RacingCar {
+
+    private static final int RANDOM_MIN_NUMBER = 0;
+    private static final int RANDOM_MAX_NUMBER = 9;
+    private static final int STANDARD_NUMBER = 4;
+    private static final String CONVERT_POSITION_CHARACTER = "-";
     private int position;
     private final String name;
 
@@ -12,8 +17,8 @@ public class RacingCar {
     }
 
     public void go() {
-        int random = Randoms.pickNumberInRange(0, 9);
-        if (random >= 4) {
+        int random = Randoms.pickNumberInRange(RANDOM_MIN_NUMBER, RANDOM_MAX_NUMBER);
+        if (random >= STANDARD_NUMBER) {
             position++;
         }
     }
@@ -29,7 +34,7 @@ public class RacingCar {
     public StringBuilder invertPosition() {
         int position = getPosition();
         StringBuilder bar = new StringBuilder();
-        bar.append("-".repeat(Math.max(0, position)));
+        bar.append(CONVERT_POSITION_CHARACTER.repeat(Math.max(0, position)));
         return bar;
     }
 }
