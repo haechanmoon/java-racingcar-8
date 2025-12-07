@@ -1,11 +1,14 @@
 package racingcar;
 
+import camp.nextstep.edu.missionutils.Randoms;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class RacingCarGame {
 
+    private static final int RANDOM_MIN_NUMBER = 0;
+    private static final int RANDOM_MAX_NUMBER = 9;
     private static final String delimiter = "[,]";
     public List<RacingCar> cars;
 
@@ -42,7 +45,8 @@ public class RacingCarGame {
 
     public void moveAll() {
         for (RacingCar car : cars) {
-            car.go();
+            int random = Randoms.pickNumberInRange(RANDOM_MIN_NUMBER, RANDOM_MAX_NUMBER);
+            car.go(random);
         }
         OutputView.printCurrentStatus(cars);
     }

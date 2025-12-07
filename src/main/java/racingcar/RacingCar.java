@@ -1,11 +1,7 @@
 package racingcar;
 
-import camp.nextstep.edu.missionutils.Randoms;
-
 public class RacingCar {
 
-    private static final int RANDOM_MIN_NUMBER = 0;
-    private static final int RANDOM_MAX_NUMBER = 9;
     private static final int STANDARD_NUMBER = 4;
     private static final String CONVERT_POSITION_CHARACTER = "-";
     private int position;
@@ -17,9 +13,8 @@ public class RacingCar {
         Validator.validateNameLength(this.name);
     }
 
-    public void go() {
-        int random = Randoms.pickNumberInRange(RANDOM_MIN_NUMBER, RANDOM_MAX_NUMBER);
-        if (random >= STANDARD_NUMBER) {
+    public void go(int number) {
+        if (number >= STANDARD_NUMBER) {
             position++;
         }
     }
