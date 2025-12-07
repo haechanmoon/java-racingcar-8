@@ -22,13 +22,9 @@ public class OutputView {
         }
     }
 
-
-    public static void totalResult() {
-        List<String> champion = RacingCarGame.selectChampion();
-        System.out.print(Messages.FINAL_CHAMPION);
-        for (String val : champion) {
-            System.out.print(val + ", ");
-        }
+    public static void totalResult(List<RacingCar> cars) {
+        List<String> champion = RacingCarGame.selectChampion(cars);
+        System.out.print(Messages.FINAL_CHAMPION + String.join(", ", champion));
     }
 
 }
