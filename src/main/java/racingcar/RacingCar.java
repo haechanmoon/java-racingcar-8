@@ -31,7 +31,7 @@ public class RacingCar {
         return name;
     }
 
-    public StringBuilder invertPosition() {
+    public StringBuilder getPositionDash() {
         int position = getPosition();
         StringBuilder bar = new StringBuilder();
         bar.append(CONVERT_POSITION_CHARACTER.repeat(Math.max(0, position)));
