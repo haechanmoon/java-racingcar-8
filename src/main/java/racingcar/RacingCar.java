@@ -14,6 +14,7 @@ public class RacingCar {
     public RacingCar(String name) {
         this.name = name;
         position = 0;
+        Validator.validateNameLength(this.name);
     }
 
     public void go() {
