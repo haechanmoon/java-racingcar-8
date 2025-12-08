@@ -21,6 +21,7 @@ public class Validator {
 
     public static void validateNameOverFive(String[] names) {
         for (String val : names) {
+            validateNameEmpty(val);
             validateNameLength(val);
         }
     }
@@ -43,5 +44,10 @@ public class Validator {
         }
     }
 
+    public static void validateNameEmpty(String name) {
+        if (name.isEmpty()) {
+            throw new IllegalArgumentException(Messages.ERROR_CAR_NAME_EMPTY);
+        }
+    }
 
 }
