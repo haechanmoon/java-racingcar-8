@@ -39,7 +39,7 @@ public class Validator {
     }
 
     public static void validateNumber(String input) {
-        if (!input.matches("\\d+")) {
+        if (!input.matches("\\d+") || Integer.parseInt(input) == 0) {
             throw new IllegalArgumentException(Messages.ERROR_IS_NOT_NUMBER);
         }
     }
