@@ -9,6 +9,6 @@ public class Messages {
     public static final String ERROR_EMPTY = "빈 값은 허용되지 않습니다.";
     public static final String ERROR_OVER_NAME = "이름은 5자 이하로 설정해야합니다.";
     public static final String ERROR_NAME_DUPLICATE = "이름이 중복되었습니다.";
-    public static final String ERROR_IS_NOT_NUMBER = "숫자만 입력가능합니다.";
+    public static final String ERROR_IS_NOT_NUMBER = "1이상의 자연수만 입력가능합니다.";
     public static final String ERROR_CAR_NAME_EMPTY = "자동차 이름은 공백일 수 없습니다.";
 }
