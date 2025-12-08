@@ -4,6 +4,8 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 class ValidatorTest {
 
@@ -43,23 +45,13 @@ class ValidatorTest {
                 .hasMessageContaining(Messages.ERROR_EMPTY);
     }
 
-    @Test
+    @ParameterizedTest
     @DisplayName("입력 횟수가 자연수인지 검사")
-    void 입력_횟수가_자연수인지_검사() {
-        //given
-        String input1 = "0";
-
-        //when,then
-        assertThatThrownBy(() -> Validator.validateNumber(input1))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining(Messages.ERROR_IS_NOT_NUMBER);
-
-        String input2 = "1f2";
-
-        //when,then
-        assertThatThrownBy(() -> Validator.validateNumber(input2))
+    @ValueSource(strings = {"f12", "-1", "0", "abc"})
+    void 입력_횟수가_자연수인지_검사(String input) {
+        //given,when,then
+        assertThatThrownBy(() -> Validator.validateNumber(input))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Messages.ERROR_IS_NOT_NUMBER);
     }
-
 }
