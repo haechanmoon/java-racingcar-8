@@ -8,7 +8,7 @@ public class Validator {
     public static final int NUMBER_LINE = 5;
 
     public static void validateEmpty(String input) {
-        if (input.isEmpty()) {
+        if (input.isBlank()) {
             throw new IllegalArgumentException(Messages.ERROR_EMPTY);
         }
     }
