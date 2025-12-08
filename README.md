@@ -26,7 +26,7 @@
 - [x] 6자 입력 시 IllegalArgumentException 발생 확인
 - [x] 자연수일 때 성공
 - [x] 시도할 횟수가 음수일 때 `IllegalArgumentException` 반환
-- [ ] 시도할 횟수가 자연수가 아닐 때 `IllegalArgumentException` 반환
+- [x] 시도할 횟수가 자연수가 아닐 때 `IllegalArgumentException` 반환
 - [x] 자동차 전진 확인
 - [x] 위치만큼 `-` 출력 확인
 - [x] 최종 우승자 출력 확인

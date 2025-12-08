@@ -42,4 +42,17 @@ class ValidatorTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Messages.ERROR_EMPTY);
     }
+
+    @Test
+    @DisplayName("입력 횟수가 자연수인지 검사")
+    void 입력_횟수가_자연수인지_검사() {
+        //given
+        String input = "-1";
+
+        //when,then
+        assertThatThrownBy(() -> Validator.validateNumber(input))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_IS_NOT_NUMBER);
+    }
+
 }
