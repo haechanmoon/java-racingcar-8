@@ -49,5 +49,4 @@ public class Validator {
             throw new IllegalArgumentException(Messages.ERROR_CAR_NAME_EMPTY);
         }
     }
-
 }
