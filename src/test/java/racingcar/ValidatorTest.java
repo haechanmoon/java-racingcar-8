@@ -47,10 +47,17 @@ class ValidatorTest {
     @DisplayName("입력 횟수가 자연수인지 검사")
     void 입력_횟수가_자연수인지_검사() {
         //given
-        String input = "-1";
+        String input1 = "0";
 
         //when,then
-        assertThatThrownBy(() -> Validator.validateNumber(input))
+        assertThatThrownBy(() -> Validator.validateNumber(input1))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_IS_NOT_NUMBER);
+
+        String input2 = "1f2";
+
+        //when,then
+        assertThatThrownBy(() -> Validator.validateNumber(input2))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Messages.ERROR_IS_NOT_NUMBER);
     }
