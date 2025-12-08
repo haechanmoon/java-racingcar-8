@@ -23,7 +23,7 @@
 
 - [ ] 입력값이 공백일 때 `IllegalArgumentException` 반환 후 종료
 - [ ] 자동차 이름 자체가 공백일 때 `IllegalArgumentException` 반환 후 종료
-- [ ] 6자 입력 시 IllegalArgumentException 발생 확인
+- [x] 6자 입력 시 IllegalArgumentException 발생 확인
 - [x] 자연수일 때 성공
 - [x] 시도할 횟수가 음수일 때 `IllegalArgumentException` 반환 후 종료
 - [ ] 시도할 횟수가 자연수가 아닐 때 `IllegalArgumentException` 반환 후 종료
