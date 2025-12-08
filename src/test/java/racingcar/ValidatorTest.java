@@ -30,4 +30,16 @@ class ValidatorTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Messages.ERROR_CAR_NAME_EMPTY);
     }
+
+    @Test
+    @DisplayName("이름 입력값이 공백일 때 에러확인")
+    void 이름_입력값이_공백일_때_에러_확인() {
+        //given
+        String input = "";
+
+        //when,then
+        assertThatThrownBy(() -> Validator.validateEmpty(input))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_EMPTY);
+    }
 }

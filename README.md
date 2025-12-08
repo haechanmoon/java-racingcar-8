@@ -21,7 +21,7 @@
 
 ## 테스트 리스트
 
-- [ ] 이름 입력값이 공백일 때 `IllegalArgumentException` 반환
+- [x] 이름 입력값이 공백일 때 `IllegalArgumentException` 반환
 - [x] 자동차 이름 자체가 공백일 때 `IllegalArgumentException` 반환
 - [x] 6자 입력 시 IllegalArgumentException 발생 확인
 - [x] 자연수일 때 성공
