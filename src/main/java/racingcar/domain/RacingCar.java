@@ -12,7 +12,7 @@ public class RacingCar {
     private final String name;
 
     public RacingCar(String name) {
-        this.name = name;
+        this.name = name.trim();
         position = 0;
     }
 
