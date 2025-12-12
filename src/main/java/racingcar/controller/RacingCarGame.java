@@ -10,6 +10,7 @@ import racingcar.views.OutputView;
 
 public class RacingCarGame {
     private String input;
+    public static StringBuilder sb = new StringBuilder();
 
     public void start() {
         OutputView.requestCarNameMessage();
@@ -19,6 +20,8 @@ public class RacingCarGame {
         OutputView.printRunResultMessage();
         List<RacingCar> cars = generateCars();
         totalRace(turns, cars);
+        OutputView.printTotalStatus();
+        OutputView.printWinners();
 
     }
 
@@ -49,8 +52,7 @@ public class RacingCarGame {
         }
     }
 
-    public StringBuilder totalRaceStatus(int turns, List<RacingCar> cars) {
-        StringBuilder sb = new StringBuilder();
+    public static StringBuilder totalRaceStatus(int turns, List<RacingCar> cars) {
         for (int i = 0; i < turns; i++) {
             sb.append(RacingCar.oneRaceStatus(cars)).append("\n");
         }
