@@ -10,4 +10,10 @@ public class Validator {
             throw new IllegalArgumentException(Messages.ERROR_IS_EMPTY);
         }
     }
+
+    public static void validateTurns(String input) {
+        if (!input.startsWith("\\d+") || input.startsWith("0")) {
+            throw new IllegalArgumentException(Messages.ERROR_IS_NOT_DIGIT);
+        }
+    }
 }

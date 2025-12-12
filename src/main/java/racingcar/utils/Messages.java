@@ -5,4 +5,5 @@ public class Messages {
     public static final String ASK_TURN_COUNT = "시도할 횟수는 몇 회인가요?";
 
     public static final String ERROR_IS_EMPTY = "[ERROR] 빈 값을 입력할 수 없습니다.";
+    public static final String ERROR_IS_NOT_DIGIT = "[ERROR] 1이상의 숫자만 입력가능합니다.";
 }
