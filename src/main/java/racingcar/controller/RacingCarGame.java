@@ -20,9 +20,9 @@ public class RacingCarGame {
         OutputView.printRunResultMessage();
         List<RacingCar> cars = generateCars();
         totalRace(turns, cars);
+        totalRaceStatus(turns, cars);
         OutputView.printTotalStatus();
-        OutputView.printWinners();
-
+        OutputView.printWinners(turns, cars);
     }
 
     public List<String> getNames() {
@@ -59,5 +59,23 @@ public class RacingCarGame {
         return sb;
     }
 
+    public StringBuilder getWinner(int turns, List<RacingCar> cars) {
+        totalRace(turns, cars);
+        int position = 0;
+        for (RacingCar car : cars) {
+            if (position < car.getPosition()) {
+                position = car.getPosition();
+            }
+        }
 
+        StringBuilder winner = new StringBuilder();
+
+        for (RacingCar car : cars) {
+            if (position == car.getPosition()) {
+                winner.append(car.getName());
+            }
+            winner.append(", ");
+        }
+        return winner;
+    }
 }
