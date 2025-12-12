@@ -18,8 +18,8 @@ public class RacingCar {
         position = 0;
     }
 
-    public void go() {
-        if (STANDARD_NUM <= getRandomNum()) {
+    public void go(int randomNum) {
+        if (STANDARD_NUM <= randomNum) {
             position++;
         }
     }

@@ -53,10 +53,9 @@ public class RacingCarGame {
 
     private void oneRace(List<RacingCar> cars) {
         for (RacingCar car : cars) {
-            car.go();
+            car.go(car.getRandomNum());
         }
     }
-
 
     private String getWinner(List<RacingCar> cars) {
         int maxPosition = 0;
