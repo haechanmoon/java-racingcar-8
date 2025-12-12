@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import racingcar.domain.RacingCar;
+import racingcar.utils.Validator;
 import racingcar.views.InputView;
 import racingcar.views.OutputView;
 
@@ -35,7 +36,9 @@ public class RacingCarGame {
 
     private List<String> getNames() {
         String[] carNames = input.split("[,]");
-        return new ArrayList<>(Arrays.asList(carNames));
+        List<String> names = new ArrayList<>(Arrays.asList(carNames));
+        Validator.validateNameDuplicated(names);
+        return names;
     }
 
     private List<RacingCar> generateCars() {
