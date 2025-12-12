@@ -10,4 +10,8 @@ public class OutputView {
     public static void requestTurnMessage() {
         System.out.println(Messages.ASK_TURN_COUNT);
     }
+
+    public static void printRunResultMessage() {
+        System.out.println(Messages.PRINT_RUN_RESULT_MESSAGE);
+    }
 }

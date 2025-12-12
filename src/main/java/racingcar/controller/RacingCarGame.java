@@ -11,6 +11,6 @@ public class RacingCarGame {
         String input = InputView.getCarNames();
         OutputView.requestTurnMessage();
         int turns = InputView.getTurns();
-
+        OutputView.printRunResultMessage();
     }
 }
