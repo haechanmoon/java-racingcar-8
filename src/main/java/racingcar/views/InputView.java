@@ -14,7 +14,7 @@ public class InputView {
     public static int getTurns() {
         String input = Console.readLine();
         Validator.validateIsEmpty(input);
-        Validator.validateTurns(input);
+        //Validator.validateTurns(input);
         return Integer.parseInt(input);
     }
 }
