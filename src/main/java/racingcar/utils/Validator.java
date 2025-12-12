@@ -5,6 +5,9 @@ public class Validator {
         if (5 < name.length()) {
             throw new IllegalArgumentException(Messages.ERROR_NAME_TOO_LONG);
         }
+        if (name.isBlank()) {
+            throw new IllegalArgumentException(Messages.ERROR_NAME_IS_BLANK);
+        }
     }
 
     public static void validateIsEmpty(String input) {
