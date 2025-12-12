@@ -17,6 +17,8 @@ public class RacingCarGame {
         OutputView.requestTurnMessage();
         int turns = InputView.getTurns();
         OutputView.printRunResultMessage();
+        List<RacingCar> cars = generateCars();
+        totalRace(turns, cars);
 
     }
 
@@ -34,4 +36,26 @@ public class RacingCarGame {
         }
         return cars;
     }
+
+    public void oneRace(List<RacingCar> cars) {
+        for (RacingCar car : cars) {
+            car.go();
+        }
+    }
+
+    public void totalRace(int turns, List<RacingCar> cars) {
+        for (int i = 0; i < turns; i++) {
+            oneRace(cars);
+        }
+    }
+
+    public StringBuilder totalRaceStatus(int turns, List<RacingCar> cars) {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < turns; i++) {
+            sb.append(RacingCar.oneRaceStatus(cars)).append("\n");
+        }
+        return sb;
+    }
+
+
 }
