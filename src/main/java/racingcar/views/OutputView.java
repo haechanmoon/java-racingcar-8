@@ -1,12 +1,8 @@
 package racingcar.views;
 
-import java.util.List;
-import racingcar.controller.RacingCarGame;
-import racingcar.domain.RacingCar;
 import racingcar.utils.Messages;
 
 public class OutputView {
-    private static RacingCarGame RacingGame;
 
     public static void requestCarNameMessage() {
         System.out.println(Messages.ASK_CAR_NAME);
@@ -20,12 +16,11 @@ public class OutputView {
         System.out.println(Messages.PRINT_RUN_RESULT_MESSAGE);
     }
 
-    public static void printTotalStatus() {
-        System.out.println(RacingCarGame.sb);
+    public static void printTotalStatus(StringBuilder totalRaceResult) {
+        System.out.println(totalRaceResult);
     }
 
-
-    public static void printWinners(int turns, List<RacingCar> cars) {
-        System.out.println(RacingGame.getWinner(turns, cars));
+    public static void printWinners(String winner) {
+        System.out.println(Messages.PRINT_FINAL_WINNER + winner);
     }
 }
