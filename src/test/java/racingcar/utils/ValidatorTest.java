@@ -18,4 +18,19 @@ class ValidatorTest {
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Messages.ERROR_NAME_TOO_LONG);
     }
+
+    @Test
+    @DisplayName("입력이 공백일때 예외처리 후 종료 확인")
+    void 입력이_공백일_때(){
+        //given
+        String input = "";
+
+        //when,then
+        assertThatThrownBy(()-> Validator.validateIsEmpty(input))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_IS_EMPTY);
+    }
+
+    @Test
+    @DisplayName("")
 }
