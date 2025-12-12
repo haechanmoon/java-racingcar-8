@@ -1,6 +1,5 @@
 package racingcar.controller;
 
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,27 +9,36 @@ import racingcar.views.OutputView;
 
 public class RacingCarGame {
     private String input;
-    public static StringBuilder sb = new StringBuilder();
 
     public void start() {
         OutputView.requestCarNameMessage();
         input = InputView.getCarNames();
+
         OutputView.requestTurnMessage();
         int turns = InputView.getTurns();
+
         OutputView.printRunResultMessage();
         List<RacingCar> cars = generateCars();
-        totalRace(turns, cars);
-        totalRaceStatus(turns, cars);
-        OutputView.printTotalStatus();
-        OutputView.printWinners(turns, cars);
+        OutputView.printTotalStatus(setTotalStatus(turns, cars));
+        OutputView.printWinners(getWinner(cars));
     }
 
-    public List<String> getNames() {
+    private StringBuilder setTotalStatus(int turns, List<RacingCar> cars) {
+        StringBuilder totalStatus = new StringBuilder();
+        for (int i = 0; i < turns; i++) {
+            oneRace(cars);
+            totalStatus.append(RacingCar.oneRaceStatus(cars));
+            totalStatus.append("\n");
+        }
+        return totalStatus;
+    }
+
+    private List<String> getNames() {
         String[] carNames = input.split("[,]");
         return new ArrayList<>(Arrays.asList(carNames));
     }
 
-    public List<RacingCar> generateCars() {
+    private List<RacingCar> generateCars() {
         List<String> names = getNames();
         List<RacingCar> cars = new ArrayList<>();
         for (String name : names) {
@@ -40,42 +48,27 @@ public class RacingCarGame {
         return cars;
     }
 
-    public void oneRace(List<RacingCar> cars) {
+    private void oneRace(List<RacingCar> cars) {
         for (RacingCar car : cars) {
             car.go();
         }
     }
 
-    public void totalRace(int turns, List<RacingCar> cars) {
-        for (int i = 0; i < turns; i++) {
-            oneRace(cars);
-        }
-    }
 
-    public static StringBuilder totalRaceStatus(int turns, List<RacingCar> cars) {
-        for (int i = 0; i < turns; i++) {
-            sb.append(RacingCar.oneRaceStatus(cars)).append("\n");
-        }
-        return sb;
-    }
-
-    public StringBuilder getWinner(int turns, List<RacingCar> cars) {
-        totalRace(turns, cars);
-        int position = 0;
+    private String getWinner(List<RacingCar> cars) {
+        int maxPosition = 0;
         for (RacingCar car : cars) {
-            if (position < car.getPosition()) {
-                position = car.getPosition();
+            if (maxPosition < car.getPosition()) {
+                maxPosition = car.getPosition();
             }
         }
 
-        StringBuilder winner = new StringBuilder();
-
+        List<String> winners = new ArrayList<>();
         for (RacingCar car : cars) {
-            if (position == car.getPosition()) {
-                winner.append(car.getName());
+            if (maxPosition == car.getPosition()) {
+                winners.add(car.getName());
             }
-            winner.append(", ");
         }
-        return winner;
+        return String.join(", ", winners);
     }
 }
