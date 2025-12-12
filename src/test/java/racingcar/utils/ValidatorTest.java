@@ -2,6 +2,7 @@ package racingcar.utils;
 
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
+import java.util.List;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -40,6 +41,18 @@ class ValidatorTest {
         assertThatThrownBy(() -> Validator.validateTurns(turns))
                 .isInstanceOf(IllegalArgumentException.class)
                 .hasMessageContaining(Messages.ERROR_IS_NOT_DIGIT);
+    }
+
+    @Test
+    @DisplayName("이름이 중복됐을 때 예외처리 후 종료 확인")
+    void 이름이_중복됐을_때() {
+        //given
+        List<String> names = List.of("pobi", "pobi", "woni");
+
+        //when,then
+        assertThatThrownBy(() -> Validator.validateNameDuplicated(names))
+                .isInstanceOf(IllegalArgumentException.class)
+                .hasMessageContaining(Messages.ERROR_NAME_DUPLICATED);
     }
 
 }
