@@ -8,4 +8,5 @@ public class Messages {
 
     public static final String ERROR_IS_EMPTY = "[ERROR] 빈 값을 입력할 수 없습니다.";
     public static final String ERROR_IS_NOT_DIGIT = "[ERROR] 1이상의 숫자만 입력가능합니다.";
+    public static final String ERROR_NAME_TOO_LONG = "[ERROR] 이름은 5자 이하여야 합니다.";
 }

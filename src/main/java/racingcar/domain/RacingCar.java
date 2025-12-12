@@ -2,6 +2,7 @@ package racingcar.domain;
 
 import camp.nextstep.edu.missionutils.Randoms;
 import java.util.List;
+import racingcar.utils.Validator;
 
 public class RacingCar {
 
@@ -13,6 +14,7 @@ public class RacingCar {
 
     public RacingCar(String name) {
         this.name = name.trim();
+        Validator.validateCarNames(this.name);
         position = 0;
     }
 

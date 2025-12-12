@@ -1,8 +1,10 @@
 package racingcar.utils;
 
 public class Validator {
-    public static void validateCarNames(String input) {
-
+    public static void validateCarNames(String name) {
+        if (5 < name.length()) {
+            throw new IllegalArgumentException(Messages.ERROR_NAME_TOO_LONG);
+        }
     }
 
     public static void validateIsEmpty(String input) {
